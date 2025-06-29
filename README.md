@@ -1,6 +1,6 @@
 # 🕵️‍♂️ wp-widget-detector
 
-> A colorful Chrome extension that instantly scans any Elementor-built WordPress page and lists all core Elementor & Essential Addons widgets in use.  
+> A Chrome extension that instantly scans any Elementor-built WordPress page and lists all core Elementor & Essential Addons widgets in use.  
 
 ---
 
