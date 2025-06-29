@@ -1,16 +1,25 @@
-// 1. Grab all Elementor widgets
-const widgets = Array.from(document.querySelectorAll('.elementor-widget'));
+// extension/content-script.js
 
-// 2. Extract unique slugs
-const slugs = [...new Set(
-  widgets
-    .map(el => el.dataset.widgetType?.split('.')[0])
-    .filter(Boolean)
-)];
+/**
+ * Scans the page for Elementor widgets and splits them into core vs. EAEL.
+ */
+function detectWidgets() {
+  const widgets = Array.from(document.querySelectorAll('.elementor-widget'));
+  const slugs = [...new Set(
+    widgets
+      .map(el => el.dataset.widgetType?.split('.')[0])
+      .filter(Boolean)
+  )];
 
-// 3. Separate core vs. EAEL
-const core = slugs.filter(s => !s.startsWith('eael-'));
-const eael = slugs.filter(s => s.startsWith('eael-'));
+  return {
+    core: slugs.filter(s => !s.startsWith('eael-')),
+    eael: slugs.filter(s => s.startsWith('eael-'))
+  };
+}
 
-// 4. Send results to the popup
-chrome.runtime.sendMessage({ action: 'widgetList', core, eael });
+// Listen for requests from the popup and respond with our detection results
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.action === 'getWidgetList') {
+    sendResponse(detectWidgets());
+  }
+});
