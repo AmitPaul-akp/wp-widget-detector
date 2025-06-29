@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "wp-widget-detector",
+  "version": "1.0.0",
+  "description": "A lightweight Chrome extension that instantly scans any WordPress page to list all core Elementor and Essential Addons widgets in use.",
+  "permissions": ["activeTab"],
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
