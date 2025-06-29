@@ -21,14 +21,11 @@
 
 ## 📦 Installation
 
-1. **Download or clone** this repository  
-   ```bash
-   git clone https://github.com/your-username/wp-widget-detector.git
-````
+1. **Download** this repository: https://github.com/AmitPaul-akp/wp-widget-detector
 
 2. **Open Chrome** and navigate to `chrome://extensions/`
 3. **Enable** Developer Mode (top right toggle)
-4. Click **Load unpacked** and select the `wp-widget-detector/` folder
+4. Click **Load unpacked** and select the `wp-widget-detector/` unzipped folder
 5. You’re all set! The extension icon appears in your toolbar.
 
 ---
