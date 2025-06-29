@@ -57,7 +57,6 @@
   ├── content-script.js   # DOM scanning & scroll/highlight logic
   ├── popup.html          # Popup UI markup & styling
   ├── popup.js            # Popup logic (counts, links, messaging)
-  └── icons/              # Optional custom icons for toolbar & store
   ```
 
 ---
